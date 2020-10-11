@@ -1,4 +1,5 @@
 import random
+import time
 generator = random.sample((range(0, 10)), 4)
 generator = [str(i) for i in generator]
 print(f"generator: {generator}")                # pomocný print
@@ -24,6 +25,7 @@ def bulls_number(sequence):
 print("Hi there! Let's play Bulls & Cows game!")
 print("I've generated a random number for you (4 digit).")
 counter = 0
+start = time.time()
 while generator:
     guess = input("Enter a number: ")
     while not len(guess) == 4 or not guess.isdigit():
@@ -33,10 +35,12 @@ while generator:
     counter += 1
     if (bulls_number(guess)) == 4:
         break
+end = time.time()
+timer = end - start
 if counter <= 5:
     level = "amazing!"
 elif counter <= 10:
     level = "average."
 else:
     level = "not so good..."
-print(f"Great, you've guessed the right number in {counter} guesses! That's {level}")
+print(f"Great, you've guessed the right number in {counter} guesses! That's {level} You did it in {timer:.4} seconds")
