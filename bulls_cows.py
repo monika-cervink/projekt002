@@ -24,8 +24,8 @@ def bulls_number(sequence):
 
 print("Hi there! Let's play Bulls & Cows game!")
 print("I've generated a random number for you (4 digit).")
-counter = 0
 start = time.time()
+counter = 0
 while generator:
     guess = input("Enter a number: ")
     while not len(guess) == 4 or not guess.isdigit():
@@ -43,4 +43,5 @@ elif counter <= 10:
     level = "average."
 else:
     level = "not so good..."
-print(f"Great, you've guessed the right number in {counter} guesses! That's {level} You did it in {timer:.4} seconds")
+print(f"Great, you've guessed the right number in {counter} guesses! "
+      f"That's {level} You did it in {timer:.4} seconds")
