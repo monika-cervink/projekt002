@@ -44,4 +44,6 @@ elif counter <= 10:
 else:
     level = "not so good..."
 print(f"Great, you've guessed the right number in {counter} guesses! "
-      f"That's {level} You did it in {timer:.4} seconds")
+      f"That's {level} \nYou did it in {timer:.4} seconds")
+with open("/Users/moniq/PycharmProjects/projekt002/number_of_guesses.txt", "a+") as file:
+    file.write(f"\n{counter}")
