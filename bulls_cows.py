@@ -2,7 +2,6 @@ import random
 import time
 generator = random.sample((range(0, 10)), 4)
 generator = [str(i) for i in generator]
-print(f"generator: {generator}")                # pomocný print
 
 
 def cows_number(sequence):
@@ -37,13 +36,14 @@ while generator:
         break
 end = time.time()
 timer = end - start
-if counter <= 5:
+
+if counter <= 10:
     level = "amazing!"
-elif counter <= 10:
+elif counter <= 20:
     level = "average."
 else:
     level = "not so good..."
 print(f"Great, you've guessed the right number in {counter} guesses! "
       f"That's {level} \nYou did it in {timer:.4} seconds")
-with open("/Users/moniq/PycharmProjects/projekt002/number_of_guesses.txt", "a+") as file:
-    file.write(f"\n{counter}")
+with open("number_of_guesses.txt", "a+") as file:
+    file.write(f"{counter}\n")
