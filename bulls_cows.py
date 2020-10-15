@@ -2,7 +2,6 @@ import random
 import time
 generator = random.sample((range(0, 10)), 4)
 generator = [str(i) for i in generator]
-print(generator)
 
 print("Hi there! Let's play Bulls & Cows game!")
 print("I've generated a random number for you (4 digit).")
